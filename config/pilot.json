@@ -1,0 +1,23 @@
+{
+  "symbol": "BTCUSDT",
+  "venue": "binance_usdm",
+  "historical_bookticker_dates": [
+    "2024-03-29",
+    "2024-03-30"
+  ],
+  "horizons_seconds": [
+    30,
+    60,
+    300
+  ],
+  "train_fraction": 0.6,
+  "validation_fraction": 0.2,
+  "test_fraction": 0.2,
+  "random_seed": 42,
+  "backtest": {
+    "fee_bps_per_side_placeholder": 0.0,
+    "slippage_bps_per_side_placeholder": 0.0,
+    "execution_delay_ms": 250
+  },
+  "note": "Fees/slippage are deliberately placeholders. Fill them from the applicable venue schedule at the time of the experiment."
+}

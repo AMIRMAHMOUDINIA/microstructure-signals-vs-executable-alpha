@@ -1,0 +1,14 @@
+numpy>=1.26
+pandas>=2.2
+scikit-learn>=1.5
+scipy>=1.13
+matplotlib>=3.9
+requests>=2.32
+websockets>=13.0
+pytest>=8.0
+
+pyarrow>=17.0
+
+statsmodels>=0.14
+
+huggingface_hub>=0.34

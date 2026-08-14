@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+message: "If you use this research code, please cite the repository."
+title: "Microstructure Signals vs Executable Alpha"
+type: software
+version: 1.0.0
+date-released: 2026-08-14
+license: MIT
+keywords:
+  - quantitative research
+  - market microstructure
+  - order book imbalance
+  - trade flow
+  - BTCUSDT
+  - backtesting

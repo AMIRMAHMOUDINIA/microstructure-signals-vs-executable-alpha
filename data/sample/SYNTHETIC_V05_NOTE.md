@@ -1,0 +1,1 @@
+v0.5 was smoke-tested on generated minute data spanning development, validation, and test periods. The descriptive script analyzed development/validation only; the model script kept test locked; an attempted test unlock without a passing gate correctly failed. Synthetic inputs are not distributed and smoke outputs are not empirical trading evidence.
