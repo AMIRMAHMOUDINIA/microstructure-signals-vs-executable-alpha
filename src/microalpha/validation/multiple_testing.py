@@ -43,5 +43,10 @@ def timestamp_nonoverlap_mask(
     if not 0 <= offset < horizon_minutes:
         raise ValueError("offset must be in [0, horizon_minutes)")
     ts = pd.to_datetime(timestamps, utc=True)
-    minute_epoch = (ts.astype("int64") // 60_000_000_000).to_numpy()
+    # Resolution-agnostic epoch-minute calculation.
+    # pandas 2.x commonly stores UTC datetimes at ns resolution, while pandas 3.x
+    # may use us resolution. Subtracting the epoch and dividing by Timedelta
+    # avoids assuming either internal storage unit.
+    epoch = pd.Timestamp("1970-01-01", tz="UTC")
+    minute_epoch = ((ts - epoch) // pd.Timedelta(minutes=1)).to_numpy(dtype=np.int64)
     return (minute_epoch % horizon_minutes) == offset
