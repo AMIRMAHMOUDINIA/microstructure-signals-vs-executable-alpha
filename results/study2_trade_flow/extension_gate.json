@@ -1,0 +1,25 @@
+{
+  "gate_pass": false,
+  "checks": {
+    "november_delta_auc_ge_0_002": true,
+    "december_delta_auc_ge_0_001": true,
+    "december_log_loss_not_worse": true,
+    "development_tfi5_coefficient_positive": false,
+    "pre_oos_monthly_tfi5_positive_fraction_ge_0_70": false
+  },
+  "primary_horizon_minutes": 10,
+  "flow_features": [
+    "tfi_1m",
+    "tfi_5m",
+    "tfi_10m",
+    "log_quote_volume",
+    "log_num_trades",
+    "tfi5_x_book_imbalance"
+  ],
+  "november_delta_auc": 0.004200746557431634,
+  "december_delta_auc": 0.005986111137470718,
+  "december_delta_log_loss": -0.00031845800926166845,
+  "development_tfi5_standardized_coef": -0.030050059173569,
+  "monthly_tfi5_positive_fraction": 0.0,
+  "policy": "v0.8 feature set and gate fixed before dynamic-flow results. If gate fails, Jan-Mar extension OOS remains closed."
+}

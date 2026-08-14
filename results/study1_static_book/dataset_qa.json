@@ -1,0 +1,14 @@
+{
+  "observed_rows": 460265,
+  "grid_rows": 461531,
+  "missing_grid_rows": 1266,
+  "completeness": 0.9972569556541164,
+  "start_utc": "2023-05-16 11:49:00+00:00",
+  "end_utc": "2024-03-31 23:59:00+00:00",
+  "duplicate_timestamps_removed": 0,
+  "non_60s_source_gaps": 13,
+  "reconstructed_mid_nonpositive": 0,
+  "premium_identity_mae": 8.942334907794116e-17,
+  "premium_identity_max_abs": 4.538134657218972e-16,
+  "premium_identity_corr": 1.0
+}

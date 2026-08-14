@@ -1,0 +1,120 @@
+{
+  "protocol_version": "v0.7",
+  "prior_statistical_gate_pass": true,
+  "model_horizon_minutes": 10,
+  "execution_delay_minutes": 1,
+  "realized_primary_holding_minutes": 9,
+  "spread_handling": "Crossed at reconstructed BBO on entry and exit.",
+  "extra_roundtrip_cost_bps_grid": [
+    0.0,
+    1.0,
+    2.0,
+    4.0,
+    6.0,
+    8.0,
+    10.0,
+    12.0
+  ],
+  "threshold_coverages": [
+    1.0,
+    0.75,
+    0.5,
+    0.25,
+    0.1,
+    0.05
+  ],
+  "selection_period": "2023-11",
+  "confirmation_period": "2023-12",
+  "economic_oos_period": "2024-01 through 2024-03",
+  "scenario_gates": {
+    "0.0": {
+      "pass": false,
+      "checks": {
+        "december_min_100_trades": true,
+        "december_net_mean_positive": false,
+        "december_net_total_positive": false,
+        "december_positive_weeks_ge_half": false
+      },
+      "selected_confidence_cutoff": 0.01922034808684331,
+      "selected_coverage_target": 0.5
+    },
+    "1.0": {
+      "pass": false,
+      "checks": {
+        "december_min_100_trades": true,
+        "december_net_mean_positive": false,
+        "december_net_total_positive": false,
+        "december_positive_weeks_ge_half": true
+      },
+      "selected_confidence_cutoff": 0.041128729631807706,
+      "selected_coverage_target": 0.05
+    },
+    "2.0": {
+      "pass": false,
+      "checks": {
+        "december_min_100_trades": true,
+        "december_net_mean_positive": false,
+        "december_net_total_positive": false,
+        "december_positive_weeks_ge_half": false
+      },
+      "selected_confidence_cutoff": 0.041128729631807706,
+      "selected_coverage_target": 0.05
+    },
+    "4.0": {
+      "pass": false,
+      "checks": {
+        "december_min_100_trades": true,
+        "december_net_mean_positive": false,
+        "december_net_total_positive": false,
+        "december_positive_weeks_ge_half": false
+      },
+      "selected_confidence_cutoff": 0.041128729631807706,
+      "selected_coverage_target": 0.05
+    },
+    "6.0": {
+      "pass": false,
+      "checks": {
+        "december_min_100_trades": true,
+        "december_net_mean_positive": false,
+        "december_net_total_positive": false,
+        "december_positive_weeks_ge_half": false
+      },
+      "selected_confidence_cutoff": 0.041128729631807706,
+      "selected_coverage_target": 0.05
+    },
+    "8.0": {
+      "pass": false,
+      "checks": {
+        "december_min_100_trades": true,
+        "december_net_mean_positive": false,
+        "december_net_total_positive": false,
+        "december_positive_weeks_ge_half": false
+      },
+      "selected_confidence_cutoff": 0.041128729631807706,
+      "selected_coverage_target": 0.05
+    },
+    "10.0": {
+      "pass": false,
+      "checks": {
+        "december_min_100_trades": true,
+        "december_net_mean_positive": false,
+        "december_net_total_positive": false,
+        "december_positive_weeks_ge_half": false
+      },
+      "selected_confidence_cutoff": 0.041128729631807706,
+      "selected_coverage_target": 0.05
+    },
+    "12.0": {
+      "pass": false,
+      "checks": {
+        "december_min_100_trades": true,
+        "december_net_mean_positive": false,
+        "december_net_total_positive": false,
+        "december_positive_weeks_ge_half": false
+      },
+      "selected_confidence_cutoff": 0.041128729631807706,
+      "selected_coverage_target": 0.05
+    }
+  },
+  "important": "Economic test results are produced only for pre-specified cost scenarios that passed December confirmation. No threshold or cost is chosen from test PnL."
+}

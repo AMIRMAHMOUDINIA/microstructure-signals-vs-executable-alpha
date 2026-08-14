@@ -1,0 +1,15 @@
+{
+  "gate_pass": false,
+  "checks": {
+    "confirmation_tfi_beta_negative": true,
+    "replication_tfi_beta_negative": true,
+    "h1_2025_monthly_negative_fraction_ge_0_67": true,
+    "confirmation_flow_reversal_auc_ge_0_505": true,
+    "replication_flow_reversal_auc_ge_0_505": true,
+    "replication_partial_tfi_beta_negative": true,
+    "replication_partial_tfi_hac_p_le_0_10": false,
+    "replication_flow_auc_beats_price_reversal_by_0_001": false
+  },
+  "monthly_negative_fraction": 1.0,
+  "policy": "v0.9.1 2025 flow-reversal replication design and gate fixed before any 2025 result. Jul-Dec 2025 opens only if Jan-Mar confirmation and Apr-Jun replication pass."
+}

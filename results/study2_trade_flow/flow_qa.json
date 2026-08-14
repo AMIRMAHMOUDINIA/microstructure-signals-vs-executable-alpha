@@ -1,0 +1,12 @@
+{
+  "rows": 461531,
+  "start_utc": "2023-05-16 11:49:00+00:00",
+  "end_utc": "2024-03-31 23:59:00+00:00",
+  "duplicate_minutes_removed": 0,
+  "missing_minutes": 0,
+  "completeness": 1.0,
+  "nonpositive_volume_rows": 118,
+  "taker_buy_gt_volume_rows": 0,
+  "median_same_minute_close_mid_diff_bps": 0.016307919614765323,
+  "p99_same_minute_close_mid_diff_bps": 0.1039233273243983
+}

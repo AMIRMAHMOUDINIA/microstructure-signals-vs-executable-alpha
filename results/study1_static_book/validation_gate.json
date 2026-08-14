@@ -1,0 +1,15 @@
+{
+  "gate_pass": true,
+  "horizon_minutes": 10,
+  "checks": {
+    "development_hac_fdr_q_le_005": true,
+    "nonoverlap_sign_agreement_ge_075": true,
+    "monthly_positive_fraction_ge_070": true,
+    "validation_auc_ge_0505": true,
+    "validation_mcc_positive": true
+  },
+  "monthly_positive_fraction": 1.0,
+  "validation_auc": 0.5133121305688144,
+  "validation_mcc": 0.0195942920928635,
+  "policy": "Internal complexity/test-unlock gate fixed before full-data results. Failure means stop escalation; it does not prove the null."
+}
