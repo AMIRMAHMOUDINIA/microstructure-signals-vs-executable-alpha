@@ -9,3 +9,4 @@ data/processed/*
 !data/processed/.gitkeep
 *.zip
 .DS_Store
+*.egg-info/
