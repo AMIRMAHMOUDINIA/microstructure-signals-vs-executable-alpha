@@ -4,7 +4,6 @@ import argparse
 import hashlib
 from pathlib import Path
 
-
 REPO_ID = "Mindbyte-89/btcusdt_perp_bookticker_features_1m_05_2023_to_03_2024"
 FILENAME = "data/train-00000-of-00001.parquet"
 EXPECTED_SHA256 = "274eb8e87c7d7185a0162271144b30a0e387ae496fe657c6af83833448f08624"

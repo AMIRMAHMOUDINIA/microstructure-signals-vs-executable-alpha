@@ -3,9 +3,8 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
-from pathlib import Path
 import zipfile
-
+from pathlib import Path
 
 FILES = [
     "results/trade_flow_v08/flow_qa.json",

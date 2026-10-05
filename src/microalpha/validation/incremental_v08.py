@@ -16,7 +16,7 @@ def metrics(y, p):
     p = np.asarray(p, dtype=float)
     pred = (p >= 0.5).astype(int)
     return {
-        "n": int(len(y)),
+        "n": len(y),
         "positive_rate": float(y.mean()),
         "roc_auc": float(roc_auc_score(y, p)),
         "balanced_accuracy": float(balanced_accuracy_score(y, pred)),
@@ -70,7 +70,7 @@ def paired_day_bootstrap_auc_delta(
 
     a = np.asarray(deltas, dtype=float)
     return {
-        "bootstrap_reps": int(len(a)),
+        "bootstrap_reps": len(a),
         "delta_auc_median": float(np.median(a)) if len(a) else np.nan,
         "delta_auc_ci_low_95": float(np.quantile(a, 0.025)) if len(a) else np.nan,
         "delta_auc_ci_high_95": float(np.quantile(a, 0.975)) if len(a) else np.nan,

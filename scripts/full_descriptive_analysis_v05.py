@@ -23,7 +23,6 @@ from microalpha.validation.multiple_testing import (
 )
 from microalpha.validation.periods import locked_period_map, select_purged_period
 
-
 PRIMARY_FEATURES = [
     "bt_imbalance_close",
     "bt_imbalance_twap",
@@ -66,7 +65,7 @@ def nonoverlap_offset_stability(
 
     b = np.asarray(betas)
     return {
-        "offsets_used": int(len(b)),
+        "offsets_used": len(b),
         "nonoverlap_beta_median": float(np.median(b)),
         "nonoverlap_beta_min": float(np.min(b)),
         "nonoverlap_beta_max": float(np.max(b)),
@@ -101,7 +100,7 @@ def analyze_one(
         "sample": sample,
         "horizon_minutes": horizon,
         "feature": feature,
-        "n": int(len(z)),
+        "n": len(z),
         "pearson_r": float(pr.statistic),
         "pearson_p_naive": float(pr.pvalue),
         "spearman_rho": float(sr.statistic),

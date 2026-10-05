@@ -1,5 +1,9 @@
 from __future__ import annotations
-import argparse,hashlib,json,zipfile
+
+import argparse
+import hashlib
+import json
+import zipfile
 from pathlib import Path
 
 FILES=[

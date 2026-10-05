@@ -1,8 +1,8 @@
 import numpy as np
 import pandas as pd
 
-from microalpha.data.normalize import infer_epoch_unit, normalize_bookticker
 from microalpha.data.grid import last_quote_grid
+from microalpha.data.normalize import infer_epoch_unit, normalize_bookticker
 from microalpha.data.qa import analyze_bookticker_raw
 
 

@@ -1,5 +1,7 @@
 from __future__ import annotations
+
 from dataclasses import dataclass
+
 import numpy as np
 from sklearn.linear_model import LogisticRegression, Ridge
 from sklearn.pipeline import Pipeline

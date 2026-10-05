@@ -1,13 +1,19 @@
 from __future__ import annotations
-import argparse, json
+
+import argparse
+import json
 from pathlib import Path
+
 import pandas as pd
 
-def f(x,d=4):
+
+def f(x, d=4):
     try:
-        if pd.isna(x): return "NA"
+        if pd.isna(x):
+            return "NA"
         return f"{float(x):.{d}f}"
-    except Exception: return str(x)
+    except (TypeError, ValueError):
+        return str(x)
 
 def main():
     p=argparse.ArgumentParser()
@@ -20,7 +26,7 @@ def main():
     uni=pd.read_csv(a.input_dir/"pre_final_tfi_regression.csv")
     part=pd.read_csv(a.input_dir/"pre_final_partial_regression.csv")
     auc=pd.read_csv(a.input_dir/"pre_final_auc.csv")
-    mon=pd.read_csv(a.input_dir/"pre_final_monthly.csv")
+    _mon=pd.read_csv(a.input_dir/"pre_final_monthly.csv")
 
     lines=[
         "# Study III v0.9.1 — 2025 Trade-Flow Reversal Replication","",

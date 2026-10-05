@@ -3,8 +3,8 @@ from __future__ import annotations
 import argparse
 import hashlib
 from pathlib import Path
-import requests
 
+import requests
 
 DEFAULT_URL = (
     "https://huggingface.co/datasets/"

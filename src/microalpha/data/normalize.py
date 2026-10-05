@@ -1,7 +1,6 @@
 from __future__ import annotations
-import numpy as np
-import pandas as pd
 
+import pandas as pd
 
 BOOKTICKER_ALIASES = {
     "update_id": ["update_id", "u", "updateId"],

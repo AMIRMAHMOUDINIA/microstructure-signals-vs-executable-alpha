@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 import json
 from pathlib import Path
+
 import pandas as pd
 
 
@@ -11,7 +12,7 @@ def f(x, d=4):
         if pd.isna(x):
             return "NA"
         return f"{float(x):.{d}f}"
-    except Exception:
+    except (TypeError, ValueError):
         return str(x)
 
 

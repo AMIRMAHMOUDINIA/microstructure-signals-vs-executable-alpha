@@ -1,5 +1,5 @@
-from pathlib import Path
 import zipfile
+from pathlib import Path
 
 from microalpha.data.archive import read_first_csv_from_zip
 

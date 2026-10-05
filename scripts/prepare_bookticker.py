@@ -1,10 +1,11 @@
 from __future__ import annotations
+
 import argparse
 from pathlib import Path
 
 from microalpha.data.archive import read_first_csv_from_zip
-from microalpha.data.normalize import normalize_bookticker
 from microalpha.data.grid import last_quote_grid
+from microalpha.data.normalize import normalize_bookticker
 from microalpha.features.microstructure import add_book_features
 
 

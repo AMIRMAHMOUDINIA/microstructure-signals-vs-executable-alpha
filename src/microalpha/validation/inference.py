@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+
 import numpy as np
 import pandas as pd
 import statsmodels.api as sm
@@ -90,7 +91,7 @@ def moving_block_bootstrap_beta(
 
     betas = betas[np.isfinite(betas)]
     return {
-        "bootstrap_reps": int(len(betas)),
+        "bootstrap_reps": len(betas),
         "block_length": int(block_length),
         "beta_median": float(np.median(betas)),
         "beta_ci_low_95": float(np.quantile(betas, 0.025)),
@@ -161,7 +162,7 @@ def moving_block_bootstrap_beta_fast(
         raise ValueError("All bootstrap slopes were non-finite.")
 
     return {
-        "bootstrap_reps": int(len(beta)),
+        "bootstrap_reps": len(beta),
         "block_length": L,
         "bootstrap_sample_rows": int(n_blocks * L),
         "beta_median": float(np.median(beta)),

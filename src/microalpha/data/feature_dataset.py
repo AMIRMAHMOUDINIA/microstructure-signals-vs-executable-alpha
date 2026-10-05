@@ -2,9 +2,9 @@ from __future__ import annotations
 
 from dataclasses import asdict, dataclass
 from pathlib import Path
+
 import numpy as np
 import pandas as pd
-
 
 RAW_REQUIRED = [
     "timestamp",
@@ -134,7 +134,7 @@ def load_and_prepare_feature_dataset(path: str | Path) -> tuple[pd.DataFrame, Fe
 
     qa = FeatureDatasetQA(
         observed_rows=int(observed.sum()),
-        grid_rows=int(len(grid)),
+        grid_rows=len(grid),
         missing_grid_rows=int((~observed).sum()),
         completeness=float(observed.mean()),
         start_utc=str(start),

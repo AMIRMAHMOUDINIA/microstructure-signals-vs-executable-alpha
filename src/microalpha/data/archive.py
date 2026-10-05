@@ -1,10 +1,9 @@
 from __future__ import annotations
 
-from pathlib import Path
-import io
 import zipfile
-import pandas as pd
+from pathlib import Path
 
+import pandas as pd
 
 BOOKTICKER_DEFAULT_COLUMNS = [
     "update_id",

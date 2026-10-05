@@ -1,5 +1,5 @@
-import pandas as pd
 import numpy as np
+import pandas as pd
 
 from microalpha.validation.inference import moving_block_bootstrap_beta_fast
 

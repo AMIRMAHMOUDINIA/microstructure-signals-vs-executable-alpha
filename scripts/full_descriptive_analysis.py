@@ -15,7 +15,6 @@ from microalpha.validation.inference import (
     ols_naive_and_hac,
 )
 
-
 FEATURES = [
     "bt_imbalance_close",
     "bt_imbalance_twap",
@@ -45,7 +44,7 @@ def load_data(path: Path) -> pd.DataFrame:
 def verify_minute_grid(df: pd.DataFrame) -> dict:
     dt = df["timestamp"].diff().dropna().dt.total_seconds()
     return {
-        "rows": int(len(df)),
+        "rows": len(df),
         "start": str(df["timestamp"].min()),
         "end": str(df["timestamp"].max()),
         "duplicate_timestamps_after_cleanup": int(df["timestamp"].duplicated().sum()),
@@ -95,7 +94,7 @@ def analyze_feature(
         "spearman_rho": float(sr.statistic),
         "spearman_p_naive": float(sr.pvalue),
         **{f"all_{k}": v for k, v in asdict(reg).items()},
-        "nonoverlap_n": int(len(pick)),
+        "nonoverlap_n": len(pick),
         "nonoverlap_beta": float(reg_non.beta),
         "nonoverlap_p": float(reg_non.p_naive),
     }

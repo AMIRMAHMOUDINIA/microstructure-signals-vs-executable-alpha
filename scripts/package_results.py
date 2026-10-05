@@ -3,9 +3,8 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
-from pathlib import Path
 import zipfile
-
+from pathlib import Path
 
 INCLUDE_PATTERNS = [
     "results/environment.json",

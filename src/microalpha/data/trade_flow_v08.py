@@ -1,11 +1,11 @@
 from __future__ import annotations
 
+import zipfile
 from dataclasses import asdict, dataclass
 from pathlib import Path
-import zipfile
+
 import numpy as np
 import pandas as pd
-
 
 KLINE_COLUMNS = [
     "open_time",
@@ -69,7 +69,7 @@ def read_kline_zip(path: str | Path) -> pd.DataFrame:
             try:
                 float(s)
                 return True
-            except Exception:
+            except ValueError:
                 return False
 
         # Official numeric kline rows begin with Unix open time.

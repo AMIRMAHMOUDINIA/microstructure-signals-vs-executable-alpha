@@ -1,6 +1,7 @@
 from __future__ import annotations
 
-from dataclasses import dataclass, asdict
+from dataclasses import dataclass
+
 import numpy as np
 import pandas as pd
 import statsmodels.api as sm
@@ -76,7 +77,7 @@ def simulate_nonoverlapping(
     extra_roundtrip_cost_bps: float,
     period_start: str,
     period_end_exclusive: str,
-    spec: EconomicSpec = EconomicSpec(),
+    spec: EconomicSpec | None = None,
 ) -> pd.DataFrame:
     """
     Conservative execution rule.
@@ -93,6 +94,9 @@ def simulate_nonoverlapping(
     The primary economic test therefore uses the same t→t+10 forecast horizon
     while imposing a conservative one-minute delay before entry.
     """
+    if spec is None:
+        spec = EconomicSpec()
+
     if extra_roundtrip_cost_bps < 0:
         raise ValueError("extra_roundtrip_cost_bps must be nonnegative")
 
@@ -216,7 +220,7 @@ def trade_metrics(trades: pd.DataFrame) -> dict:
     hac_t, hac_p = _hac_mean_test(net, maxlags=5)
 
     return {
-        "n_trades": int(len(trades)),
+        "n_trades": len(trades),
         "long_fraction": float((trades["side"] > 0).mean()),
         "gross_mean_bps": float(gross.mean()),
         "gross_total_bps": float(gross.sum()),

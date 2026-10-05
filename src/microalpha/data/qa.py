@@ -1,12 +1,13 @@
 from __future__ import annotations
-from dataclasses import asdict, dataclass
+
 import json
+from dataclasses import asdict, dataclass
 from pathlib import Path
-import numpy as np
+
 import pandas as pd
 
 from microalpha.data.archive import read_first_csv_from_zip
-from microalpha.data.normalize import normalize_bookticker, infer_epoch_unit
+from microalpha.data.normalize import infer_epoch_unit, normalize_bookticker
 
 
 @dataclass
@@ -65,7 +66,7 @@ def analyze_bookticker_raw(raw: pd.DataFrame) -> tuple[pd.DataFrame, BookTickerQ
         return float(series.quantile(p))
 
     report = BookTickerQA(
-        rows=int(len(df)),
+        rows=len(df),
         start_utc=str(df["timestamp"].min()),
         end_utc=str(df["timestamp"].max()),
         inferred_time_unit=time_unit if time_unit != "unknown" else infer_epoch_unit(df["source_time"]),

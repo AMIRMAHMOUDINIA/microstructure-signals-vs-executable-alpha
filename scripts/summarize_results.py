@@ -6,7 +6,6 @@ from pathlib import Path
 
 import pandas as pd
 
-
 PRIMARY_FEATURE = "bt_imbalance_close"
 PRIMARY_HORIZON = 10
 
@@ -138,8 +137,10 @@ def main():
                     "",
                     "| N | AUC | Balanced accuracy | MCC | Log loss | Brier |",
                     "|---:|---:|---:|---:|---:|---:|",
-                    f"| {int(row['n']):,} | {fmt(row['roc_auc'])} | {fmt(row['balanced_accuracy'])} | "
-                    f"{fmt(row['mcc'])} | {fmt(row['log_loss'])} | {fmt(row['brier'])} |",
+                    (
+                        f"| {int(row['n']):,} | {fmt(row['roc_auc'])} | {fmt(row['balanced_accuracy'])} | "
+                        f"{fmt(row['mcc'])} | {fmt(row['log_loss'])} | {fmt(row['brier'])} |"
+                    ),
                 ]
                 break
 

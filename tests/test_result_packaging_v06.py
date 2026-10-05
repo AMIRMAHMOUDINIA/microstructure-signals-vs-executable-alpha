@@ -1,8 +1,8 @@
-from pathlib import Path
 import json
-import zipfile
 import subprocess
 import sys
+import zipfile
+from pathlib import Path
 
 
 def test_package_results_creates_manifest(tmp_path: Path):
@@ -19,6 +19,7 @@ def test_package_results_creates_manifest(tmp_path: Path):
         [sys.executable, str(script), "--root", str(root), "--output", str(output)],
         capture_output=True,
         text=True,
+        check=False,
     )
     assert r.returncode == 0
     assert output.exists()

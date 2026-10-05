@@ -6,7 +6,6 @@ import sys
 from importlib import metadata
 from pathlib import Path
 
-
 PACKAGES = [
     "numpy",
     "pandas",

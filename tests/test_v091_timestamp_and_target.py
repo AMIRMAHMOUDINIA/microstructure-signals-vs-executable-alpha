@@ -1,6 +1,8 @@
 import numpy as np
 import pandas as pd
-from microalpha.data.trade_flow_v08 import normalize_klines, add_trade_flow_features
+
+from microalpha.data.trade_flow_v08 import add_trade_flow_features, normalize_klines
+
 
 def base_df(times):
     n=len(times)

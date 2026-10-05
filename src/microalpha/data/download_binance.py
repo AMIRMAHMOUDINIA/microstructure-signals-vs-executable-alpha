@@ -1,19 +1,19 @@
 from __future__ import annotations
 
 import argparse
-from datetime import date, datetime, timedelta
-from pathlib import Path
 import hashlib
 import re
-import requests
+from datetime import date, timedelta
+from pathlib import Path
 
+import requests
 
 BASE = "https://data.binance.vision/data/futures/um/daily"
 
 
 def iter_dates(start: str, end: str):
-    s = datetime.strptime(start, "%Y-%m-%d").date()
-    e = datetime.strptime(end, "%Y-%m-%d").date()
+    s = date.fromisoformat(start)
+    e = date.fromisoformat(end)
     if e < s:
         raise ValueError("end must be >= start")
     d = s

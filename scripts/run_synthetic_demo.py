@@ -1,7 +1,9 @@
 from __future__ import annotations
+
 import numpy as np
 import pandas as pd
 from sklearn.metrics import accuracy_score, roc_auc_score
+
 from microalpha.features.microstructure import add_book_features, add_forward_log_return
 from microalpha.models.baselines import classification_models
 

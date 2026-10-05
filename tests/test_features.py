@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd
+
 from microalpha.features.microstructure import add_book_features, add_forward_log_return
 
 

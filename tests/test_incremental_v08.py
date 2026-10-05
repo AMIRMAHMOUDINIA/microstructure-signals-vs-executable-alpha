@@ -1,7 +1,10 @@
 import numpy as np
 import pandas as pd
 
-from microalpha.validation.incremental_v08 import metrics, paired_day_bootstrap_auc_delta
+from microalpha.validation.incremental_v08 import (
+    metrics,
+    paired_day_bootstrap_auc_delta,
+)
 
 
 def test_metrics_auc():

@@ -5,7 +5,6 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
-from sklearn.compose import ColumnTransformer
 from sklearn.impute import SimpleImputer
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import (
@@ -16,7 +15,6 @@ from sklearn.metrics import (
 )
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
-
 
 FEATURES = [
     "bt_imbalance_close",
@@ -65,7 +63,7 @@ def evaluate(name, model, df):
     pred = (p >= 0.5).astype(int)
     return {
         "period": name,
-        "n": int(len(x)),
+        "n": len(x),
         "positive_rate": float(y.mean()),
         "roc_auc": float(roc_auc_score(y, p)),
         "balanced_accuracy": float(balanced_accuracy_score(y, pred)),

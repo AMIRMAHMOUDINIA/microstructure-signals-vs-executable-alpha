@@ -1,6 +1,5 @@
-from pathlib import Path
 import zipfile
-import pandas as pd
+from pathlib import Path
 
 from microalpha.data.trade_flow_v08 import KLINE_COLUMNS, read_kline_zip
 

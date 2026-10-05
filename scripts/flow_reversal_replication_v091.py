@@ -18,7 +18,6 @@ from microalpha.data.trade_flow_v08 import (
 from microalpha.validation.incremental_v08 import paired_day_bootstrap_auc_delta
 from microalpha.validation.inference import ols_naive_and_hac
 
-
 H = 10
 
 PERIODS = {
@@ -106,7 +105,7 @@ def partial_tfi_control_price(z: pd.DataFrame) -> dict:
         cov_type="HAC", cov_kwds={"maxlags": H}
     )
     return {
-        "n": int(len(d)),
+        "n": len(d),
         "tfi_beta_bps_per_unit": float(fit.params["tfi_5m"] * 10_000),
         "tfi_hac_t": float(fit.tvalues["tfi_5m"]),
         "tfi_hac_p": float(fit.pvalues["tfi_5m"]),
@@ -138,7 +137,7 @@ def auc_comparison(z: pd.DataFrame, name: str) -> dict:
     )
     return {
         "period": name,
-        "n": int(len(d)),
+        "n": len(d),
         "flow_reversal_auc": flow_auc,
         "price_reversal_auc": price_auc,
         "delta_auc_flow_vs_price_reversal": flow_auc - price_auc,
@@ -186,8 +185,8 @@ def main():
     x = add_features_targets(k)
 
     qa = {
-        "rows_raw_normalized": int(len(k)),
-        "grid_rows": int(len(x)),
+        "rows_raw_normalized": len(k),
+        "grid_rows": len(x),
         "observed_minutes": int(x["observed"].sum()),
         "missing_minutes": int((~x["observed"]).sum()),
         "completeness": float(x["observed"].mean()),

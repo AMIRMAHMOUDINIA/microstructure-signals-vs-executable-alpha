@@ -21,7 +21,6 @@ from microalpha.data.feature_dataset import load_and_prepare_feature_dataset
 from microalpha.research.targets import add_exact_forward_target
 from microalpha.validation.periods import locked_period_map, select_purged_period
 
-
 MODEL_FEATURES = [
     "bt_imbalance_close",
     "bt_imbalance_twap",
@@ -71,7 +70,7 @@ def evaluate(name: str, model, x: pd.DataFrame) -> dict:
     pred = (p >= 0.5).astype(int)
     return {
         "period": name,
-        "n": int(len(x)),
+        "n": len(x),
         "positive_rate": float(y.mean()),
         "roc_auc": float(roc_auc_score(y, p)),
         "balanced_accuracy": float(balanced_accuracy_score(y, pred)),

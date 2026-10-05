@@ -1,4 +1,5 @@
 import numpy as np
+
 from microalpha.backtest.taker import one_period_taker_pnl
 
 

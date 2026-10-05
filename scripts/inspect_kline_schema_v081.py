@@ -1,8 +1,8 @@
 from __future__ import annotations
+
 import argparse
-from pathlib import Path
 import zipfile
-import pandas as pd
+from pathlib import Path
 
 from microalpha.data.trade_flow_v08 import read_kline_zip
 
@@ -19,7 +19,7 @@ def main():
     path = files[0]
     print("Inspecting:", path)
     with zipfile.ZipFile(path) as z:
-        member = [n for n in z.namelist() if n.lower().endswith(".csv")][0]
+        member = next(n for n in z.namelist() if n.lower().endswith(".csv"))
         with z.open(member) as f:
             first = f.readline().decode("utf-8", errors="replace").strip()
         print("Raw first line:")

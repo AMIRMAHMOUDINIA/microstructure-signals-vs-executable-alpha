@@ -4,8 +4,8 @@ import argparse
 import hashlib
 import re
 from pathlib import Path
-import requests
 
+import requests
 
 BASE = "https://data.binance.vision/data/futures/um/monthly/klines"
 

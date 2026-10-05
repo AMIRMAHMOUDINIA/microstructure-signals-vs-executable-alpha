@@ -7,6 +7,9 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
+# Import the exact same baseline model/features used in v0.5/v0.6.
+from chronological_logistic_baseline_v05 import MODEL_FEATURES, build_model
+
 from microalpha.backtest.economic_v07 import (
     DEFAULT_COVERAGES,
     DEFAULT_EXTRA_RT_COST_BPS,
@@ -21,10 +24,6 @@ from microalpha.backtest.economic_v07 import (
 from microalpha.data.feature_dataset import load_and_prepare_feature_dataset
 from microalpha.research.targets import add_exact_forward_target
 from microalpha.validation.periods import locked_period_map, select_purged_period
-
-# Import the exact same baseline model/features used in v0.5/v0.6.
-from chronological_logistic_baseline_v05 import MODEL_FEATURES, build_model
-
 
 NOV_START = "2023-11-01T00:00:00Z"
 DEC_START = "2023-12-01T00:00:00Z"
@@ -124,7 +123,7 @@ def main():
 
     prior_gate = verify_prior_gate(args.prior_gate)
     spec = EconomicSpec()
-    x, qa = prepare(args.data, spec.forecast_horizon_minutes)
+    x, _qa = prepare(args.data, spec.forecast_horizon_minutes)
 
     selection_rows = x[
         (x["timestamp"] >= pd.Timestamp(NOV_START))

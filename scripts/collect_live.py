@@ -1,12 +1,13 @@
 from __future__ import annotations
+
 import argparse
 import asyncio
 import csv
 import json
-from pathlib import Path
 import time
-import websockets
+from pathlib import Path
 
+import websockets
 
 BASE = "wss://fstream.binance.com/public/stream"
 

@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 import json
 from pathlib import Path
+
 import pandas as pd
 
 
@@ -11,7 +12,7 @@ def f(x, d=3):
         if pd.isna(x):
             return "NA"
         return f"{float(x):.{d}f}"
-    except Exception:
+    except (TypeError, ValueError):
         return str(x)
 
 
@@ -110,12 +111,16 @@ def main():
         "",
         "## Interpretation rule",
         "",
-        "A statistically predictive model is not called tradable merely because AUC is above 0.50. "
-        "The primary economic question is whether conservative BBO crossing plus realistic additional costs "
-        "leave a stable positive net return without test-driven threshold selection.",
+        (
+            "A statistically predictive model is not called tradable merely because AUC is above 0.50. "
+            "The primary economic question is whether conservative BBO crossing plus realistic additional costs "
+            "leave a stable positive net return without test-driven threshold selection."
+        ),
         "",
-        "Funding, queue effects, latency below one minute, market impact, and position-size capacity are not modeled here. "
-        "This is a conservative small-notional research backtest, not a production trading simulator.",
+        (
+            "Funding, queue effects, latency below one minute, market impact, and position-size capacity are not modeled here. "
+            "This is a conservative small-notional research backtest, not a production trading simulator."
+        ),
     ]
 
     args.output.write_text("\n".join(lines) + "\n", encoding="utf-8")

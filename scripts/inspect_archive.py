@@ -1,7 +1,8 @@
 from __future__ import annotations
+
 import argparse
-from pathlib import Path
 import zipfile
+from pathlib import Path
 
 from microalpha.data.archive import read_first_csv_from_zip
 

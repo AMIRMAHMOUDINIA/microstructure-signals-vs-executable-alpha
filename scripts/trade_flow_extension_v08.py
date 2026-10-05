@@ -6,6 +6,7 @@ from pathlib import Path
 
 import numpy as np
 import pandas as pd
+from chronological_logistic_baseline_v05 import MODEL_FEATURES, build_model
 
 from microalpha.data.feature_dataset import load_and_prepare_feature_dataset
 from microalpha.data.trade_flow_v08 import (
@@ -17,12 +18,12 @@ from microalpha.data.trade_flow_v08 import (
     qa_to_dict,
 )
 from microalpha.research.targets import add_exact_forward_target
-from microalpha.validation.incremental_v08 import metrics, paired_day_bootstrap_auc_delta
+from microalpha.validation.incremental_v08 import (
+    metrics,
+    paired_day_bootstrap_auc_delta,
+)
 from microalpha.validation.inference import ols_naive_and_hac
 from microalpha.validation.periods import Period, select_purged_period
-
-from chronological_logistic_baseline_v05 import MODEL_FEATURES, build_model
-
 
 HORIZON = 10
 
@@ -160,14 +161,14 @@ def main():
     )
     args = p.parse_args()
 
-    x, book_qa, flowqa = prepare(args.book_data, args.kline_dir)
+    x, _book_qa, flowqa = prepare(args.book_data, args.kline_dir)
     args.output_dir.mkdir(parents=True, exist_ok=True)
 
     (args.output_dir / "flow_qa.json").write_text(
         json.dumps(qa_to_dict(flowqa), indent=2), encoding="utf-8"
     )
 
-    base, aug, dev = fit_models(x)
+    base, aug, _dev = fit_models(x)
 
     # Primary augmented coefficients.
     coef = pd.DataFrame({
